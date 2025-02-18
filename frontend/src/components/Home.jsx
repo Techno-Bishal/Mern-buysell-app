@@ -14,12 +14,12 @@ const Home = () => {
 
   useEffect(()=>{
       const token = localStorage.getItem("user")
-      if(token){
-        setIsLoggedIn(true)
+      // if(token){
+      //   setIsLoggedIn(true)
 
-      }else{
-        isLoggedIn(false)
-      }
+      // }else{
+      //   isLoggedIn(false)
+      // }
   },[])
 
 
@@ -152,9 +152,9 @@ const Home = () => {
                       <h2 className="text-xl font-bold text-white">
                         {course.title}
                       </h2>
-                      <button className="mt-4 bg-yellow-600 py-4 px-6 rounded-lg text-lg font-bold duration-300 cursor-pointer hover:bg-blue-500">
+                      <Link to="/courses" className="mt-4 bg-yellow-600 py-4 px-6 rounded-lg text-lg font-bold duration-300 cursor-pointer hover:bg-blue-500">
                         Enroll Now
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

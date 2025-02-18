@@ -138,7 +138,7 @@ const Buy = () => {
         console.log("📤 Sending payment info to backend...", paymentInfo);
 
         try {
-            const response = await axios.post("http://localhost:3000/api/v1/order/", paymentInfo, {
+            const response = await axios.post("http://localhost:3000/api/v1/order", paymentInfo, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
