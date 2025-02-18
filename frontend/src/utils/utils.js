@@ -1,1 +1,1 @@
-export const BACKEND_URL  = "https://mern-buysell-app.onrender.com//api/v1"
+export const BACKEND_URL  = "https://mern-buysell-app.onrender.com/api/v1/user"

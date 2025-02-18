@@ -26,10 +26,7 @@ app.use(
 );
 app.use(
   cors({
-    origin: [
-      "https://mern-buysell-app.vercel.app",  // Your deployed frontend
-      "http://localhost:5174"  // Allow local development
-    ],
+    origin: ["http://localhost:5174", "https://mern-buysell-app.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
