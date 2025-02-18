@@ -24,10 +24,15 @@ app.use(
     tempFileDir: "/tmp/",
   })
 );
+const allowedOrigins = [
+  "https://mern-buysell-app.vercel.app", // Your deployed frontend
+  "http://localhost:5173" // For local development
+];
+
 app.use(
   cors({
-    origin: ["http://localhost:5174", "https://mern-buysell-app.vercel.app"],
-    credentials: true,
+    origin: allowedOrigins,
+    credentials: true, // ✅ Allow cookies/auth headers
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
