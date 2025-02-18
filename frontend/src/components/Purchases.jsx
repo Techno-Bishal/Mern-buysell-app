@@ -7,6 +7,7 @@ import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { RiHome2Fill } from "react-icons/ri";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { BACKEND_URL } from "../utils/utils";
 
 const Purchases = () => {
   const [purchases, setPurchases] = useState([]);
@@ -22,7 +23,7 @@ const Purchases = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/v1/user/logout", {
+      const response = await axios.get(`${BACKEND_URL}/user/logout`, {
         withCredentials:true
       });
       toast.success(response.data.message);
@@ -49,7 +50,7 @@ const Purchases = () => {
       }
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:3000/api/v1/user/purchases", {
+        const response = await axios.get(`${BACKEND_URL}/user/purchases`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPurchases(response.data.courseData || response.data);
