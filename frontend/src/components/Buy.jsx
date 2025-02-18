@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import {CardElement, useElements, useStripe} from "@stripe/react-stripe-js"
-import { BACKEND_URL } from "../utils/utils";
 
 const Buy = () => {
   const { courseId } = useParams();
@@ -39,7 +38,7 @@ const Buy = () => {
       try {
     
         const response = await axios.post(
-          `${BACKEND_URL}/course/buy/${courseId}`, // Backend API URL
+          `http://localhost:3000/api/v1/course/buy/${courseId}`, // Backend API URL
           {},
           {
             headers: {
@@ -139,7 +138,7 @@ const Buy = () => {
         console.log("📤 Sending payment info to backend...", paymentInfo);
 
         try {
-            const response = await axios.post(`${BACKEND_URL}/order`, paymentInfo, {
+            const response = await axios.post("http://localhost:3000/api/v1/order", paymentInfo, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

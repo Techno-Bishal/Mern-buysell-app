@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import axios from 'axios'
 import toast from "react-hot-toast";
-import { BACKEND_URL } from "../utils/utils";
+
 
 
 const Signup = () => {
@@ -20,7 +20,7 @@ const handleSubmit = async(e) =>{
   e.preventDefault()
   
   try{
-    const response = await axios.post(`${BACKEND_URL}/user/signup`,{
+    const response = await axios.post("http://localhost:3000/api/v1/user/signup",{
       firstName,
       lastName,
       email,
